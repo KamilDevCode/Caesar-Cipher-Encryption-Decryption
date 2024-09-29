@@ -1,5 +1,6 @@
 from src.ciphers.caeser import CeaserCipher
 from src.files import JSONManager
+from src.history import Record, OperationType
 
 
 class Menu:
@@ -8,10 +9,12 @@ class Menu:
         self.options = {
             "1": self.encrypt_sentence,
             "2": self.decrypt_sentence,
-            "3": self.display_operations,
-            "4": self.exit,
+            "3": self.save_history_to_json_file,
+            "4": self.load_history_from_json_file,
+            "5": self.display_operations,
+            "6": self.exit,
         }
-        self.history = []
+        self.history: list[Record] = []
         self.cipher = CeaserCipher()
         self.file_manager = JSONManager()
 
@@ -55,6 +58,9 @@ class Menu:
         shift = int(input("Enter shift value: "))
         encrypted_text = self.cipher.encrypt(text, shift)
         print(f"Encrypted text: {encrypted_text}")
+        self.history.append(
+            Record(OperationType.ENCRYPTING, text, encrypted_text, shift)
+        )
 
     def decrypt_sentence(self):
         print("Decrypting")
@@ -62,6 +68,9 @@ class Menu:
         shift = int(input("Enter shift value: "))
         decrypted_text = self.cipher.decrypt(text, shift)
         print(f"Decrypted text: {decrypted_text}")
+        self.history.append(
+            Record(OperationType.DECRYPTING, text, decrypted_text, shift)
+        )
 
     def save_history_to_json_file(self):
         if not self.history:
@@ -71,11 +80,12 @@ class Menu:
             print("=== Saving to history.json ===")
             file_name = input("Enter file name: ")
             self.file_manager.save_to_json(self.history, file_name)
-            print(f"Data saved to {file_name}")
+            print(f"History saved to {file_name}.")
 
     def load_history_from_json_file(self):
         print("=== Loading from history.json ===")
         file_name = input("Enter file name: ")
+        self.history = [Record(**record) for record in JSONManager.load_from_json(file_name)]
         print(f"Data loaded from {file_name} and data is: {JSONManager.load_from_json(file_name)}")
 
     def exit(self):
