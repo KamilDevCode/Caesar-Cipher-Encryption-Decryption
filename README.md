@@ -51,23 +51,22 @@ The project is organized into the following directories and files:
 Caesar-Cipher-Encryption-Decryption-with-Facade/
 │
 ├── src/
-│   ├── app.py               # Main application entry point
+│   ├── app.py               
 │   ├── ciphers/
-│   │   └── caeser.py        # Caesar Cipher implementation
+│   │   └── caeser.py        
 │   ├── files/
-│   │   └── json_manager.py   # JSON handling for saving/loading history
+│   │   └── json_manager.py   
 │   ├── history/
-│   │   └── record.py         # Operation record management
-│   └── facade.py             # Menu and application control logic
-│
+│   │   └── record.py         
+│   └── facade.py             
 ├── tests/
-│   ├── test_caeser.py        # Unit tests for the Caesar Cipher
-│   ├── test_history.py        # Unit tests for history records
-│   └── test_facade.py         # Unit tests for the menu and application control
+│   ├── test_caeser.py        
+│   ├── test_history.py        
+│   └── test_facade.py         
 │
-├── requirements.txt           # Project dependencies
-├── LICENSE                    # License information
-└── README.md                  # Project documentation
+├── requirements.txt         
+├── LICENSE                    
+└── README.md                
 
 ## 🧪 Usage
 
