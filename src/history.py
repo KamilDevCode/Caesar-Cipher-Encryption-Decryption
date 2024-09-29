@@ -11,6 +11,7 @@ class OperationType(Enum):
     LOADING = "Loading"
 
 
+
 @dataclass
 class Record:
     operation: OperationType
