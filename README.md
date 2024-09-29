@@ -48,9 +48,7 @@ Ensure you have the following installed:
 ## 🗂️ Code Structure
 The project is organized into the following directories and files:
 
-# Project Structure
-
-
+### Project Structure
 Caesar-Cipher-Encryption-Decryption-with-Facade/
 ├── src/
 │   ├── app.py                     # Main application entry point
