@@ -1,4 +1,5 @@
 from src.ciphers.caeser import CeaserCipher
+from src.files import JSONManager
 
 
 class Menu:
@@ -12,6 +13,7 @@ class Menu:
         }
         self.history = []
         self.cipher = CeaserCipher()
+        self.file_manager = JSONManager()
 
     def loop(self):
         while self.__is_running:
@@ -60,6 +62,21 @@ class Menu:
         shift = int(input("Enter shift value: "))
         decrypted_text = self.cipher.decrypt(text, shift)
         print(f"Decrypted text: {decrypted_text}")
+
+    def save_history_to_json_file(self):
+        if not self.history:
+            print("No operations to save.")
+            return
+        else:
+            print("=== Saving to history.json ===")
+            file_name = input("Enter file name: ")
+            self.file_manager.save_to_json(self.history, file_name)
+            print(f"Data saved to {file_name}")
+
+    def load_history_from_json_file(self):
+        print("=== Loading from history.json ===")
+        file_name = input("Enter file name: ")
+        print(f"Data loaded from {file_name} and data is: {JSONManager.load_from_json(file_name)}")
 
     def exit(self):
         self.__is_running = False
