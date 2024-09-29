@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from src.ciphers.caeser import CeaserCipher
 from src.files import JSONManager
 from src.history import Record, OperationType
@@ -82,11 +84,24 @@ class Menu:
             self.file_manager.save_to_json(self.history, file_name)
             print(f"History saved to {file_name}.")
 
+    from datetime import datetime
+
     def load_history_from_json_file(self):
         print("=== Loading from history.json ===")
         file_name = input("Enter file name: ")
-        self.history = [Record(**record) for record in JSONManager.load_from_json(file_name)]
-        print(f"Data loaded from {file_name} and data is: {JSONManager.load_from_json(file_name)}")
+        loaded_data = JSONManager.load_from_json(file_name)
+
+        self.history = [
+            Record(
+                operation=OperationType(record['operation']),
+                input_text=record['input_text'],
+                output_text=record['output_text'],
+                shift=record['shift'],
+                time=datetime.strptime(record['time'], '%Y-%m-%d %H:%M:%S')  # Konwersja na datetime
+            ) for record in loaded_data
+        ]
+
+        print(f"Data loaded from {file_name} and data is: {loaded_data}")
 
     def exit(self):
         self.__is_running = False
