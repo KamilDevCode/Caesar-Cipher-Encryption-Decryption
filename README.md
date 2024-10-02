@@ -49,6 +49,7 @@ Ensure you have the following installed:
 The project is organized into the following directories and files:
 
 ### Project Structure
+```bash
 Caesar-Cipher-Encryption-Decryption-with-Facade/
 ├── src/
 │   ├── app.py                     # Main application entry point
@@ -68,7 +69,7 @@ Caesar-Cipher-Encryption-Decryption-with-Facade/
 ├── requirements.txt                 # Project dependencies
 ├── LICENSE                          # License information
 └── README.md                        # Project documentation
-            
+```
 
 ## 🧪 Usage
 
