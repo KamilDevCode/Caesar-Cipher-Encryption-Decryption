@@ -1,7 +1,7 @@
 # 🎉 Caesar Cipher Encryption & Decryption with Facade 🔐
 
 ## 💡 Technologies
-![Python](https://img.shields.io/badge/python-%2314354C.svg?style=for-the-badge&logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ## 📖 Table of Contents
