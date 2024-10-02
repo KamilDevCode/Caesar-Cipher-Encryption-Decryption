@@ -1,5 +1,7 @@
 # 🎉 Caesar Cipher Encryption & Decryption with Facade 🔐
 
+## 💡 Technologies
+![Python](https://img.shields.io/badge/python-3.12-blue.svg?style=for-the-badge&logo=python&logoColor=%23FFD43B)
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
@@ -38,7 +40,7 @@ Ensure you have the following installed:
 - Python 3.12 or later
 - Pip (Python package installer)
 
-### Installation
+### 💿 Installation
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/Caesar-Cipher-Encryption-Decryption-with-Facade.git
