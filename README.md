@@ -42,8 +42,11 @@ Ensure you have the following installed:
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/Caesar-Cipher-Encryption-Decryption-with-Facade.git
-   cd Caesar-Cipher-Encryption-Decryption-with-Facade
    ```
+   2. Change your directory:
+      ```bash
+       cd Caesar-Cipher-Encryption-Decryption-with-Facade
+      ```
    
 ## 🗂️ Code Structure
 The project is organized into the following directories and files:
